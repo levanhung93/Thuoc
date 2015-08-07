@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BanHoaEntityModelStoreContainer" CdmEntityContainer="BanHoaEntityEntities">
+    <EntitySetMapping Name="ChuDeHoas">
+      <EntityTypeMapping TypeName="BanHoaEntityModel.ChuDeHoa">
+        <MappingFragment StoreEntitySet="ChuDeHoa">
+          <ScalarProperty Name="MaChuDe" ColumnName="MaChuDe" />
+          <ScalarProperty Name="LoaiChuDe" ColumnName="LoaiChuDe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hoas">
+      <EntityTypeMapping TypeName="BanHoaEntityModel.Hoa">
+        <MappingFragment StoreEntitySet="Hoa">
+          <ScalarProperty Name="MaHoa" ColumnName="MaHoa" />
+          <ScalarProperty Name="TenHoa" ColumnName="TenHoa" />
+          <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="MaChuDe" ColumnName="MaChuDe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="GetChuDeHoa" FunctionName="BanHoaEntityModel.Store.GetChuDeHoa">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BanHoaEntityModel.GetChuDeHoa_Result">
+          <ScalarProperty Name="MaChuDe" ColumnName="MaChuDe" />
+          <ScalarProperty Name="LoaiChuDe" ColumnName="LoaiChuDe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="GetFlower" FunctionName="BanHoaEntityModel.Store.GetFlower">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="BanHoaEntityModel.GetFlower_Result">
+          <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+          <ScalarProperty Name="TenHoa" ColumnName="TenHoa" />
+          <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+          <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+          <ScalarProperty Name="LoaiChuDe" ColumnName="LoaiChuDe" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="InsertFlower" FunctionName="BanHoaEntityModel.Store.InsertFlower" />
+  </EntityContainerMapping>
+</Mapping>

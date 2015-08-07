@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BanHoaEntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="ChuDeHoa">
+    <Key>
+      <PropertyRef Name="MaChuDe" />
+    </Key>
+    <Property Name="MaChuDe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="LoaiChuDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Hoas" Relationship="Self.FK__Hoa__MaChuDe__1273C1CD" FromRole="ChuDeHoa" ToRole="Hoa" />
+  </EntityType>
+  <EntityType Name="Hoa">
+    <Key>
+      <PropertyRef Name="MaHoa" />
+    </Key>
+    <Property Name="MaHoa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <Property Name="TenHoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GiaBan" Type="Double" Nullable="false" />
+    <Property Name="SoLuong" Type="Int32" Nullable="false" />
+    <Property Name="HinhAnh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MaChuDe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="ChuDeHoa" Relationship="Self.FK__Hoa__MaChuDe__1273C1CD" FromRole="Hoa" ToRole="ChuDeHoa" />
+  </EntityType>
+  <Association Name="FK__Hoa__MaChuDe__1273C1CD">
+    <End Role="ChuDeHoa" Type="Self.ChuDeHoa" Multiplicity="0..1" />
+    <End Role="Hoa" Type="Self.Hoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChuDeHoa">
+        <PropertyRef Name="MaChuDe" />
+      </Principal>
+      <Dependent Role="Hoa">
+        <PropertyRef Name="MaChuDe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="BanHoaEntityEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="ChuDeHoas" EntityType="Self.ChuDeHoa" />
+    <EntitySet Name="Hoas" EntityType="Self.Hoa" />
+    <AssociationSet Name="FK__Hoa__MaChuDe__1273C1CD" Association="Self.FK__Hoa__MaChuDe__1273C1CD">
+      <End Role="ChuDeHoa" EntitySet="ChuDeHoas" />
+      <End Role="Hoa" EntitySet="Hoas" />
+    </AssociationSet>
+    <FunctionImport Name="GetChuDeHoa" ReturnType="Collection(BanHoaEntityModel.GetChuDeHoa_Result)" />
+    <FunctionImport Name="GetFlower" ReturnType="Collection(BanHoaEntityModel.GetFlower_Result)" />
+    <FunctionImport Name="InsertFlower">
+      <Parameter Name="MaHoa" Mode="In" Type="String" />
+      <Parameter Name="TenHoa" Mode="In" Type="String" />
+      <Parameter Name="GiaBan" Mode="In" Type="Double" />
+      <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+      <Parameter Name="HinhAnh" Mode="In" Type="String" />
+      <Parameter Name="MaChuDe" Mode="In" Type="String" />
+      <Parameter Name="Error" Mode="InOut" Type="String" />
+    </FunctionImport>
+  </EntityContainer>
+  <ComplexType Name="GetChuDeHoa_Result">
+    <Property Type="String" Name="MaChuDe" Nullable="false" MaxLength="10" />
+    <Property Type="String" Name="LoaiChuDe" Nullable="false" MaxLength="100" />
+  </ComplexType>
+  <ComplexType Name="GetFlower_Result">
+    <Property Type="String" Name="HinhAnh" Nullable="false" MaxLength="100" />
+    <Property Type="String" Name="TenHoa" Nullable="false" MaxLength="100" />
+    <Property Type="Double" Name="GiaBan" Nullable="false" />
+    <Property Type="Int32" Name="SoLuong" Nullable="false" />
+    <Property Type="String" Name="LoaiChuDe" Nullable="false" MaxLength="100" />
+  </ComplexType>
+</Schema>

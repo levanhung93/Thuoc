@@ -1,0 +1,26 @@
+C:\Users\levan\Desktop\LeVanHung_OnTap\LeVanHung_OnTap\bin\LeVanHung_OnTap.dll.config
+C:\Users\levan\Desktop\LeVanHung_OnTap\LeVanHung_OnTap\bin\LeVanHung_OnTap.dll
+C:\Users\levan\Desktop\LeVanHung_OnTap\LeVanHung_OnTap\bin\LeVanHung_OnTap.pdb
+C:\Users\levan\Desktop\LeVanHung_OnTap\LeVanHung_OnTap\obj\Debug\LeVanHung_OnTap.csprojResolveAssemblyReference.cache
+C:\Users\levan\Desktop\LeVanHung_OnTap\LeVanHung_OnTap\obj\Debug\LeVanHung_OnTap.dll
+C:\Users\levan\Desktop\LeVanHung_OnTap\LeVanHung_OnTap\obj\Debug\LeVanHung_OnTap.pdb
+C:\Users\levan\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\LeVanHung_OnTap.dll.config
+C:\Users\levan\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\LeVanHung_OnTap.dll
+C:\Users\levan\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\LeVanHung_OnTap.pdb
+C:\Users\levan\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\EntityFramework.dll
+C:\Users\levan\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\EntityFramework.SqlServer.dll
+C:\Users\levan\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\EntityFramework.xml
+C:\Users\levan\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\EntityFramework.SqlServer.xml
+C:\Users\levan\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\obj\Debug\LeVanHung_OnTap.csprojResolveAssemblyReference.cache
+C:\Users\levan\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\obj\Debug\LeVanHung_OnTap.dll
+C:\Users\levan\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\obj\Debug\LeVanHung_OnTap.pdb
+C:\Users\Hamlet Hung\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\LeVanHung_OnTap.dll.config
+C:\Users\Hamlet Hung\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\LeVanHung_OnTap.dll
+C:\Users\Hamlet Hung\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\LeVanHung_OnTap.pdb
+C:\Users\Hamlet Hung\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\EntityFramework.dll
+C:\Users\Hamlet Hung\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\EntityFramework.SqlServer.dll
+C:\Users\Hamlet Hung\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\EntityFramework.xml
+C:\Users\Hamlet Hung\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\bin\EntityFramework.SqlServer.xml
+C:\Users\Hamlet Hung\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\obj\Debug\LeVanHung_OnTap.csprojResolveAssemblyReference.cache
+C:\Users\Hamlet Hung\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\obj\Debug\LeVanHung_OnTap.dll
+C:\Users\Hamlet Hung\Desktop\LeVanHung_OnTap - Copy\LeVanHung_OnTap\obj\Debug\LeVanHung_OnTap.pdb

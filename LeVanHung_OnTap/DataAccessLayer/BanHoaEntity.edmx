@@ -1,0 +1,192 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="BanHoaEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="ChuDeHoa">
+          <Key>
+            <PropertyRef Name="MaChuDe" />
+          </Key>
+          <Property Name="MaChuDe" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="LoaiChuDe" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Hoa">
+          <Key>
+            <PropertyRef Name="MaHoa" />
+          </Key>
+          <Property Name="MaHoa" Type="nchar" MaxLength="10" Nullable="false" />
+          <Property Name="TenHoa" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="GiaBan" Type="float" Nullable="false" />
+          <Property Name="SoLuong" Type="int" Nullable="false" />
+          <Property Name="HinhAnh" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="MaChuDe" Type="nchar" MaxLength="10" />
+        </EntityType>
+        <Association Name="FK__Hoa__MaChuDe__1273C1CD">
+          <End Role="ChuDeHoa" Type="Self.ChuDeHoa" Multiplicity="0..1" />
+          <End Role="Hoa" Type="Self.Hoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChuDeHoa">
+              <PropertyRef Name="MaChuDe" />
+            </Principal>
+            <Dependent Role="Hoa">
+              <PropertyRef Name="MaChuDe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="GetChuDeHoa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="GetFlower" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+        <Function Name="InsertFlower" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="MaHoa" Type="nchar" Mode="In" />
+          <Parameter Name="TenHoa" Type="nvarchar" Mode="In" />
+          <Parameter Name="GiaBan" Type="float" Mode="In" />
+          <Parameter Name="SoLuong" Type="int" Mode="In" />
+          <Parameter Name="HinhAnh" Type="nvarchar" Mode="In" />
+          <Parameter Name="MaChuDe" Type="nchar" Mode="In" />
+          <Parameter Name="Error" Type="nvarchar" Mode="InOut" />
+        </Function>
+        <EntityContainer Name="BanHoaEntityModelStoreContainer">
+          <EntitySet Name="ChuDeHoa" EntityType="Self.ChuDeHoa" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Hoa" EntityType="Self.Hoa" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK__Hoa__MaChuDe__1273C1CD" Association="Self.FK__Hoa__MaChuDe__1273C1CD">
+            <End Role="ChuDeHoa" EntitySet="ChuDeHoa" />
+            <End Role="Hoa" EntitySet="Hoa" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="BanHoaEntityModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="ChuDeHoa">
+          <Key>
+            <PropertyRef Name="MaChuDe" />
+          </Key>
+          <Property Name="MaChuDe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="LoaiChuDe" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <NavigationProperty Name="Hoas" Relationship="Self.FK__Hoa__MaChuDe__1273C1CD" FromRole="ChuDeHoa" ToRole="Hoa" />
+        </EntityType>
+        <EntityType Name="Hoa">
+          <Key>
+            <PropertyRef Name="MaHoa" />
+          </Key>
+          <Property Name="MaHoa" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+          <Property Name="TenHoa" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="GiaBan" Type="Double" Nullable="false" />
+          <Property Name="SoLuong" Type="Int32" Nullable="false" />
+          <Property Name="HinhAnh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="MaChuDe" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <NavigationProperty Name="ChuDeHoa" Relationship="Self.FK__Hoa__MaChuDe__1273C1CD" FromRole="Hoa" ToRole="ChuDeHoa" />
+        </EntityType>
+        <Association Name="FK__Hoa__MaChuDe__1273C1CD">
+          <End Role="ChuDeHoa" Type="Self.ChuDeHoa" Multiplicity="0..1" />
+          <End Role="Hoa" Type="Self.Hoa" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="ChuDeHoa">
+              <PropertyRef Name="MaChuDe" />
+            </Principal>
+            <Dependent Role="Hoa">
+              <PropertyRef Name="MaChuDe" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="BanHoaEntityEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="ChuDeHoas" EntityType="Self.ChuDeHoa" />
+          <EntitySet Name="Hoas" EntityType="Self.Hoa" />
+          <AssociationSet Name="FK__Hoa__MaChuDe__1273C1CD" Association="Self.FK__Hoa__MaChuDe__1273C1CD">
+            <End Role="ChuDeHoa" EntitySet="ChuDeHoas" />
+            <End Role="Hoa" EntitySet="Hoas" />
+          </AssociationSet>
+          <FunctionImport Name="GetChuDeHoa" ReturnType="Collection(BanHoaEntityModel.GetChuDeHoa_Result)" />
+          <FunctionImport Name="GetFlower" ReturnType="Collection(BanHoaEntityModel.GetFlower_Result)" />
+          <FunctionImport Name="InsertFlower">
+            <Parameter Name="MaHoa" Mode="In" Type="String" />
+            <Parameter Name="TenHoa" Mode="In" Type="String" />
+            <Parameter Name="GiaBan" Mode="In" Type="Double" />
+            <Parameter Name="SoLuong" Mode="In" Type="Int32" />
+            <Parameter Name="HinhAnh" Mode="In" Type="String" />
+            <Parameter Name="MaChuDe" Mode="In" Type="String" />
+            <Parameter Name="Error" Mode="InOut" Type="String" />
+          </FunctionImport>
+        </EntityContainer>
+        <ComplexType Name="GetChuDeHoa_Result">
+          <Property Type="String" Name="MaChuDe" Nullable="false" MaxLength="10" />
+          <Property Type="String" Name="LoaiChuDe" Nullable="false" MaxLength="100" />
+        </ComplexType>
+        <ComplexType Name="GetFlower_Result">
+          <Property Type="String" Name="HinhAnh" Nullable="false" MaxLength="100" />
+          <Property Type="String" Name="TenHoa" Nullable="false" MaxLength="100" />
+          <Property Type="Double" Name="GiaBan" Nullable="false" />
+          <Property Type="Int32" Name="SoLuong" Nullable="false" />
+          <Property Type="String" Name="LoaiChuDe" Nullable="false" MaxLength="100" />
+        </ComplexType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="BanHoaEntityModelStoreContainer" CdmEntityContainer="BanHoaEntityEntities">
+          <EntitySetMapping Name="ChuDeHoas">
+            <EntityTypeMapping TypeName="BanHoaEntityModel.ChuDeHoa">
+              <MappingFragment StoreEntitySet="ChuDeHoa">
+                <ScalarProperty Name="MaChuDe" ColumnName="MaChuDe" />
+                <ScalarProperty Name="LoaiChuDe" ColumnName="LoaiChuDe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Hoas">
+            <EntityTypeMapping TypeName="BanHoaEntityModel.Hoa">
+              <MappingFragment StoreEntitySet="Hoa">
+                <ScalarProperty Name="MaHoa" ColumnName="MaHoa" />
+                <ScalarProperty Name="TenHoa" ColumnName="TenHoa" />
+                <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="MaChuDe" ColumnName="MaChuDe" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="GetChuDeHoa" FunctionName="BanHoaEntityModel.Store.GetChuDeHoa">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BanHoaEntityModel.GetChuDeHoa_Result">
+                <ScalarProperty Name="MaChuDe" ColumnName="MaChuDe" />
+                <ScalarProperty Name="LoaiChuDe" ColumnName="LoaiChuDe" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="GetFlower" FunctionName="BanHoaEntityModel.Store.GetFlower">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="BanHoaEntityModel.GetFlower_Result">
+                <ScalarProperty Name="HinhAnh" ColumnName="HinhAnh" />
+                <ScalarProperty Name="TenHoa" ColumnName="TenHoa" />
+                <ScalarProperty Name="GiaBan" ColumnName="GiaBan" />
+                <ScalarProperty Name="SoLuong" ColumnName="SoLuong" />
+                <ScalarProperty Name="LoaiChuDe" ColumnName="LoaiChuDe" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="InsertFlower" FunctionName="BanHoaEntityModel.Store.InsertFlower" />
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

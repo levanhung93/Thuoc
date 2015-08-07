@@ -1,0 +1,26 @@
+﻿body {
+    font-size: 15px;
+}
+#Content {
+    width: 810px;
+    min-height: 200px;
+    margin: auto;
+    border: 1px solid #cccccc;
+    box-shadow: 5px 3px 5px #ccc;
+}
+#AddFlower {
+    width: 400px;
+    min-height: 200px;
+    margin: auto;
+    border: 1px solid aqua;
+}
+    .Title {
+        width: 400px;
+        font-weight: bold;
+        background: #cccccc;
+    }
+#ShowFlower {
+    width: 800px;
+    min-height: 200px;
+    margin: auto;
+}

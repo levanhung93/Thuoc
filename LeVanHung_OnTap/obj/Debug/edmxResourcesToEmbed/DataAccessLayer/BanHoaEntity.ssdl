@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BanHoaEntityModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="ChuDeHoa">
+    <Key>
+      <PropertyRef Name="MaChuDe" />
+    </Key>
+    <Property Name="MaChuDe" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="LoaiChuDe" Type="nvarchar" MaxLength="100" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Hoa">
+    <Key>
+      <PropertyRef Name="MaHoa" />
+    </Key>
+    <Property Name="MaHoa" Type="nchar" MaxLength="10" Nullable="false" />
+    <Property Name="TenHoa" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="GiaBan" Type="float" Nullable="false" />
+    <Property Name="SoLuong" Type="int" Nullable="false" />
+    <Property Name="HinhAnh" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MaChuDe" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <Association Name="FK__Hoa__MaChuDe__1273C1CD">
+    <End Role="ChuDeHoa" Type="Self.ChuDeHoa" Multiplicity="0..1" />
+    <End Role="Hoa" Type="Self.Hoa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ChuDeHoa">
+        <PropertyRef Name="MaChuDe" />
+      </Principal>
+      <Dependent Role="Hoa">
+        <PropertyRef Name="MaChuDe" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="GetChuDeHoa" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="GetFlower" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <Function Name="InsertFlower" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="MaHoa" Type="nchar" Mode="In" />
+    <Parameter Name="TenHoa" Type="nvarchar" Mode="In" />
+    <Parameter Name="GiaBan" Type="float" Mode="In" />
+    <Parameter Name="SoLuong" Type="int" Mode="In" />
+    <Parameter Name="HinhAnh" Type="nvarchar" Mode="In" />
+    <Parameter Name="MaChuDe" Type="nchar" Mode="In" />
+    <Parameter Name="Error" Type="nvarchar" Mode="InOut" />
+  </Function>
+  <EntityContainer Name="BanHoaEntityModelStoreContainer">
+    <EntitySet Name="ChuDeHoa" EntityType="Self.ChuDeHoa" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hoa" EntityType="Self.Hoa" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Hoa__MaChuDe__1273C1CD" Association="Self.FK__Hoa__MaChuDe__1273C1CD">
+      <End Role="ChuDeHoa" EntitySet="ChuDeHoa" />
+      <End Role="Hoa" EntitySet="Hoa" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
